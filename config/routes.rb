@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   devise_for :users
   get 'homes/about', as: 'about'#　homesコントローラ/aboutアクション,as: aboutパス
   resources :post_images, only: [:new, :create, :index, :show, :destroy]
-  resources :users, only: [:show, :edit]
+  resources :users, only: [:show, :edit, :update]
 end
