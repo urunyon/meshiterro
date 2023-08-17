@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+
   root to: "homes#top"#TOPページを/にしてる
-　#　homesコントローラ/aboutアクション,as: aboutパス
-  get 'homes/about', as: 'about'
+  devise_for :users
+  resources :post_images, only: [:new, :create, :index, :show, :destroy]
+  get 'homes/about', as: 'about'#　homesコントローラ/aboutアクション,as: aboutパス
 end
