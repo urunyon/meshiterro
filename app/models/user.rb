@@ -5,8 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :post_images, dependent: :destroy#1:N の「1」側にあたるモデルに、has_many を記載する
-
-  
+  has_many :post_comments, dependent: :destroy
   has_one_attached :profile_image
 
   def get_profile_image(width, height)
